@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@theme {
+  --color-custom-blue: #6a7aff;
+  --color-custom-pink: #f5d1dd;
+  --color-custom-orange: #f19a56;
+  --color-custom-gray: #cbc5c5;
+  --color-custom-peach: #ffbd89;
+  --color-custom-black: #000000;
+  --color-custom-yellow: #d1ab1a;
+  --shadow-custom-header-shadow: 0px 4px 10px 2px #00000040;
+  --ws-tight: 0.05em;
+  --ws-normal: 0.2em;
+  --ws-wide: 0.4em;
+}
+
+body {
+    font-family: 'Kiwi Maru';
+}
+.my_container {
+  width: 90%;
+}
+.word-spacing-tight {
+  word-spacing: var(--ws-tight);
+}
+
+.word-spacing-normal {
+  word-spacing: var(--ws-normal);
+}
+
+.word-spacing-wide {
+  word-spacing: var(--ws-wide);
+}
