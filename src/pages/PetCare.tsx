@@ -20,7 +20,7 @@ import Search from "../assets/images/Search_fill.png";
 // import Pet_Care_banner from "../assets/images/petcare/petcare_banner.png";
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

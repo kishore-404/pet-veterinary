@@ -167,8 +167,8 @@ const swiperRef = useRef<any>(null);
                 pagination={{
                   el: ".custom-pagination",
                   clickable: true,
-                  renderBullet: (index, className) => {
-                    return `<span class="${className} inline-block w-3 h-3 rounded-full mx-1 bg-white opacity-40 transition-all duration-300 transform"></span>`;
+                  renderBullet: ( className) => {
+                    return `<span  class="${className} inline-block w-3 h-3 rounded-full mx-1 bg-white opacity-40 transition-all duration-300 transform"></span>`;
                   },
                 }}
               >
