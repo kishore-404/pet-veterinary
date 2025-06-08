@@ -13,11 +13,20 @@
   --ws-wide: 0.4em;
 }
 
+/* outside @theme block */
+.scrollbar-hide {
+  scrollbar-width: none;         /* Firefox */
+  -ms-overflow-style: none;      /* Internet Explorer 10+ */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;                 /* Safari and Chrome */
+}
+
 body {
     font-family: 'Kiwi Maru';
 }
 .my_container {
-  width: 90%;
+  width: 88%;
 }
 .word-spacing-tight {
   word-spacing: var(--ws-tight);
@@ -29,4 +38,51 @@ body {
 
 .word-spacing-wide {
   word-spacing: var(--ws-wide);
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mySwiper .swiper-pagination-bullet-active {
+  @apply opacity-100 scale-125;
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  transform: scale(1.25);
+}
+.service_swiper .swiper-pagination-bullet {
+          background-color: black;
+          opacity: 0.4;
+          width: 12px;
+          height: 12px;
+          border-radius: 9999px;
+          margin: 0 4px;
+          transition: all 0.3s ease;
+        }
+        .service_swiper .swiper-pagination-bullet-active {
+          opacity: 1;
+          transform: scale(1.3);
+          background-color: black;
+        }
+        .swiper-backface-hidden .swiper-slide {
+  transform: none !important;
 }
