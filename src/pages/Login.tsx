@@ -57,27 +57,30 @@ function Login() {
   });
 
   const handleGoogleLogin = async () => {
-    try {
-      const result = await signInWithPopup(auth, provider);
-      const { user } = result;
-      const isNew = getAdditionalUserInfo(result)?.isNewUser;
+  try {
+    provider.setCustomParameters({ prompt: "select_account" });
+    const result = await signInWithPopup(auth, provider);
 
-      if (user.uid) {
-        const userDoc = doc(db, "users", user.uid);
-        if (isNew) {
-          await setDoc(userDoc, {
-            name: user.displayName,
-            email: user.email,
-          });
-          navigate("/sign-qa");
-        } else {
-          navigate("/dashboard");
-        }
+    const { user } = result;
+    const isNew = getAdditionalUserInfo(result)?.isNewUser;
+
+    if (user.uid) {
+      const userDoc = doc(db, "users", user.uid);
+      if (isNew) {
+        await setDoc(userDoc, {
+          name: user.displayName,
+          email: user.email,
+        });
+        navigate("/sign-qa");
+      } else {
+        navigate("/dashboard");
       }
-    } catch (error) {
-      console.error("Google login error:", error);
     }
-  };
+  } catch (error: any) {
+    console.error("Google login error:", error.code, error.message, error.customData);
+  }
+};
+
 
   const handleFormSubmit = async (
     values: FormValues,
