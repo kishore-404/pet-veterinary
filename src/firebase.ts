@@ -5,7 +5,7 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 const firebaseConfig = {
   apiKey: "AIzaSyDCIgE_VG6l4jfLnJ5pSrqXHzLdZpnc7So",
-  authDomain: "pet-website-ad1a4.firebaseapp.com",
+  authDomain: "pet-veterinary-git-main-kishoredeveloper-projects23.vercel.app",
   projectId: "pet-website-ad1a4",
   storageBucket: "pet-website-ad1a4.firebasestorage.app",
   messagingSenderId: "614975877815",
