@@ -4,7 +4,7 @@ import { auth, db, storage } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+
 
 function SignQA() {
   const [step, setStep] = useState(1);
