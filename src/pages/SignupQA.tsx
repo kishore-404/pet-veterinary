@@ -237,7 +237,7 @@ function SignQA() {
       </div>
     </div>
   </div>
-  <div className="d-flex justify-center"><Footer /></div>
+ 
 </div>
 
   );
