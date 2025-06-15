@@ -17,10 +17,9 @@ import Readmore from "../components/Readmore";
 import Left_arrow from "../assets/images/about/left_arrow.png";
 import Right_arrow from "../assets/images/about/right_arrow.png";
 import Search from "../assets/images/Search_fill.png";
-// import Pet_Care_banner from "../assets/images/petcare/petcare_banner.png";
-// Swiper imports
+import Pet_Care_banner from "../assets/images/petcare/petcare_banner.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation} from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -64,8 +63,23 @@ function PetCare() {
   return (
     <div className="flex flex-col items-center">
       <Header />
-      <section className="my_container mt-20 mb-10">
-        <div className="w-full">
+       <p className="xl:text-5xl text-2xl pt-10 lg:hidden">Category</p>
+      <section className="my_container mt-20 lg:mt-0 mb-10">
+        
+        <div className="lg:grid grid-cols-12 hidden">
+          <div className="col-span-4 flex flex-col justify-end">
+            <div className="mb-20">
+              <p className="xl:text-5xl text-2xl xl:pt-15 xl:pb-10">Category</p>
+            </div>
+          </div>
+          <div className="col-span-8">
+            <div className="flex w-full items-center justify-end gap-5">
+              <p className="xl:text-4xl text-2xl text-right">Everyday Everywhere <br /> Pet Care</p>
+              <img src={Pet_Care_banner} className="z-10" alt="" />
+            </div>
+          </div>
+        </div>
+        <div className="w-full lg:-mt-12">
           {/* Mobile Filter & Selected Button */}
           <div className="lg:hidden flex flex-col gap-4 mb-6">
             <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-40">
@@ -126,7 +140,7 @@ function PetCare() {
                 )}
               </div>
 
-              <div className="absolute right-0 -me-1 md:-me-2 md:top-25 top-70">
+              <div className="absolute right-0 -me-1 md:-me-2 md:top-25 top-90">
                 <img src={Blog} className="w-35 md:w-50" alt="" />
               </div>
             </div>
@@ -145,7 +159,7 @@ function PetCare() {
                   }}
                   className={`relative flex flex-col items-center space-y-1 px-10 transition-transform duration-300 ease-out ${
                     isSelected
-                      ? "2xl:scale-120 xl:scale-120 lg:scale-115 shadow-2xl z-50 bg-[#CBC5C5] pt-5 rounded-2xl"
+                      ? "2xl:scale-120 xl:scale-120 lg:scale-115 shadow-2xl z-30 bg-[#CBC5C5] pt-5 rounded-2xl"
                       : ""
                   }`}
                   style={{
@@ -192,7 +206,7 @@ function PetCare() {
           </div>
 
           {/* --- Search Input for All Devices --- */}
-          <div className="flex justify-end mt-15 mb-10 px-5">
+          <div className="flex justify-center lg:justify-end mt-15 mb-10 px-5">
             <div className="relative w-90 max-w-xl bg-[#CBC5C5] rounded-full text-white">
               {/* Search icon positioned inside the input */}
               <img
@@ -263,9 +277,7 @@ function PetCare() {
                                     </p>
                                   </div>
                                   <div className="flex justify-end mt-4">
-                                    <div
-                                      onClick={() => setActiveHistory(card)}
-                                    >
+                                    <div onClick={() => setActiveHistory(card)}>
                                       <Readmore />
                                     </div>
                                   </div>

@@ -8,6 +8,15 @@ export default defineConfig({
         tailwindcss(),
   ],
   build: {
-    chunkSizeWarningLimit: 1000, // 1 MB
+    chunkSizeWarningLimit: 1000, 
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          swiper: ['swiper', 'swiper/react'],
+          firebase: ['firebase/app', 'firebase/auth', 'firebase/firestore'],
+        },
+      },
+    },
   },
 })
